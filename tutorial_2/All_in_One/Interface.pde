@@ -148,6 +148,11 @@ void mousePressed() {
     // Back button area (30,20,30,15) in CORNER mode
     if (mouseX > 14 && mouseX < 46 && mouseY > 11 && mouseY < 28) {
       Screen = 0; // Go back to main menu
+      println("Back, condition Screen = 0");
+      redraw();
+      if(loop !=true){
+        loop();
+      }
     }
   }
   
@@ -156,9 +161,11 @@ void mousePressed() {
   //first button 109,209
   if (mouseX > 72 && mouseX < 147 && mouseY > 185 && mouseY < 234) {
       gray = true;
+      redraw();
   //second button 410,210
   } else if (mouseX > 371 && mouseX < 447 && mouseY > 185 && mouseY < 234) {
       gray = false;
+      redraw();
   }
   
   if(mouseX > 222 && mouseX < 297 && mouseY > 185 && mouseY < 234){

@@ -57,9 +57,9 @@ void drawrandom(){
 void Screen2() {
   if(loop == true){
     loop();
-  } else {
+  } else if(loop == false) {
     noLoop();
-}
+  }
   
   drawrandom();
   backButton();
