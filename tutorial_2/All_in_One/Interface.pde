@@ -18,6 +18,9 @@ void setup(){
 }
 
 void draw() {
+  //Easy method to find Coord
+  println(mouseX + " : " + mouseY);
+  
   // Screen Check
     if (Screen == 0) {
       mainMenu();
@@ -146,5 +149,20 @@ void mousePressed() {
     if (mouseX > 14 && mouseX < 46 && mouseY > 11 && mouseY < 28) {
       Screen = 0; // Go back to main menu
     }
+  }
+  
+  
+  //Button for question 2and3
+  //first button 109,209
+  if (mouseX > 72 && mouseX < 147 && mouseY > 185 && mouseY < 234) {
+      gray = true;
+  //second button 410,210
+  } else if (mouseX > 371 && mouseX < 447 && mouseY > 185 && mouseY < 234) {
+      gray = false;
+  }
+  
+  if(mouseX > 222 && mouseX < 297 && mouseY > 185 && mouseY < 234){
+   loop = !loop;
+   redraw();
   }
 }

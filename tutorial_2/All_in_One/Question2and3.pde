@@ -1,8 +1,13 @@
+boolean gray = true;
+boolean loop = true;
+
 void drawrandom(){
   background(255);
   
   rectMode(CORNER);
   noStroke();
+  
+  
   
   int cols;
   int rows;
@@ -11,6 +16,8 @@ void drawrandom(){
   rows = height / squareSize;
   cols = width / squareSize;
   
+  if(gray != true){
+  //For Loop
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
       int x = i * squareSize;
@@ -23,8 +30,10 @@ void drawrandom(){
       rect(x, y, squareSize, squareSize);
     }
   }
+}  
   
-
+  if(gray == true){
+  //While loop
   int i = 0;
     while (i < cols) {
       int j = 0;
@@ -40,11 +49,25 @@ void drawrandom(){
       }
       i++;
     }
+  }
 }
 
+
+
 void Screen2() {
-  
+  if(loop == true){
+    loop();
+  } else {
+    noLoop();
+}
   
   drawrandom();
   backButton();
+  
+  rectMode(CENTER);
+  
+  fill(0);
+  rect(110, 210, 75, 50);
+  rect(410, 210, 75, 50);
+  rect(260, 210, 75, 50);
 }

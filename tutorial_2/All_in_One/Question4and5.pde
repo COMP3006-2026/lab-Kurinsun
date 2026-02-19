@@ -4,7 +4,7 @@ void Screen3() {
   
   fill(255);
   textSize(32);
-  text("Practical 4 + 5, Do Shit Nigga", 50, 50);
+  text("Practical 4 + 5, Do Shit bruh", 50, 50);
 
   // Back button
   backButton();
