@@ -66,8 +66,16 @@ void Screen2() {
   
   rectMode(CENTER);
   
-  fill(0);
+  textSize(25);
+  fill(70);
   rect(110, 210, 75, 50);
   rect(410, 210, 75, 50);
   rect(260, 210, 75, 50);
+  fill(0); 
+  textSize(18);
+  text("Gray", 92, 215);
+  textSize(18);
+  text("Colour", 385, 215);
+  textSize(18);
+  text("Pause", 238, 215);
 }

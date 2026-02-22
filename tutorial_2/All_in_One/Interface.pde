@@ -62,7 +62,7 @@ void mainMenu() {
     fill(70);
     rect(0, 2*height/3, width, height/3);
     Text();
-    text("Practical 4 + 5", 220, 250);
+    text("Practical 4", 220, 250);
   } else {
     background(0,0,0);
     textSize(32);
@@ -172,4 +172,25 @@ void mousePressed() {
    loop = !loop;
    redraw();
   }
+  
+   if (mouseX > 42 && mouseX < 122 && mouseY > 212 && mouseY < 237) {
+     personWidth = min(personWidth + 10, 300);
+   }
+
+     if (mouseX > 42 && mouseX < 122 && mouseY > 242 && mouseY < 267) {
+       personWidth = max(personWidth - 10, 20);
+     }
+
+     if (mouseX > 210 && mouseX < 290 && mouseY > 212 && mouseY < 237) {
+       personHeight = min(personHeight + 10, 260);
+     }
+
+     if (mouseX > 210 && mouseX < 290 && mouseY > 242 && mouseY < 267) {
+       personHeight = max(personHeight - 10, 20);
+     }
+     // Reset
+     if (mouseX > 378 && mouseX < 458 && mouseY > 220 && mouseY < 260) {
+       personWidth  = 50;
+       personHeight = 150;
+     }
 }
