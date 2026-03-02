@@ -28,5 +28,5 @@ void draw() {
     }
   }
   updatePixels();
-  t += 0.001; //for speed
+  t += 0.01; //for speed
 }
