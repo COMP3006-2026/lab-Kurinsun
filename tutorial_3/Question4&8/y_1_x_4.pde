@@ -21,8 +21,8 @@ void drawCurve() {
   for (float x = -5; x <= 5; x += 0.01) {
     float y = 1 - pow(x, 4);
 
-    float sx = map(x, -4, 4, 0, width);
-    float sy = map(y, -4, 4, height, 0);
+    float sx = map(x, -3, 3, 0, width);
+    float sy = map(y, -3, 3, height, 0);
 
     vertex(sx, sy);
   }
