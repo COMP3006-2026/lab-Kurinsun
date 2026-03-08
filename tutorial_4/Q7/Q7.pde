@@ -1,6 +1,6 @@
-int maleCount   = 0;
-int femaleCount = 0;
-int bornAfter2003 = 0;
+int male   = 0;
+int female = 0;
+int bornAbove2003 = 0;
 
 void setup() {
   size(300, 200);
@@ -11,20 +11,20 @@ void setup() {
     TableRow row = table.getRow(i);
 
     String gender      = row.getString(4).trim();  // store the string gender
-    String birthYearStr = row.getString(5).trim(); // store the string year
+    String birthYearString = row.getString(5).trim(); // store the string year
 
     // count gender
     if (gender.equalsIgnoreCase("Male")) {
-      maleCount++;
+      male++;
     } else if (gender.equalsIgnoreCase("Female")) {
-      femaleCount++;
+      female++;
     }
 
     //Take the amount of people from after 2003 (2003 not in the count)
-    if (!birthYearStr.isEmpty()) {
-      int birthYear = Integer.parseInt(birthYearStr); //convert the string value to int 
+    if (!birthYearString.isEmpty()) {
+      int birthYear = Integer.parseInt(birthYearString); //convert the string value to int 
       if (birthYear > 2003) {
-        bornAfter2003++;
+        bornAbove2003++;
       }
     }
   }
@@ -38,7 +38,7 @@ void draw() {
   textAlign(LEFT);
   text("RESULTS", 20, 65);
   textSize(14);
-  text("Males : " + maleCount, 20, 100);
-  text("Females : " + femaleCount, 20, 125);
-  text("Born after 2003 : " + bornAfter2003, 20, 150);
+  text("Males : " + male, 20, 100);
+  text("Females : " + female, 20, 125);
+  text("Born after 2003 : " + bornAbove2003, 20, 150);
 }
