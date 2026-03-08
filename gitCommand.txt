@@ -1,0 +1,5 @@
+in order, use this when you're in the folder directory
+
+git add *
+git commit -m "Insert Message"
+git push origin main
