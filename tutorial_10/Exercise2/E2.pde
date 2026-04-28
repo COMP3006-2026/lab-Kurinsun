@@ -1,0 +1,92 @@
+import shapes3d.*;
+import shapes3d.contour.*;
+import shapes3d.org.apache.commons.math.*;
+import shapes3d.org.apache.commons.math.geometry.*;
+import shapes3d.path.*;
+import shapes3d.utils.*;
+import peasy.*;
+
+PeasyCam camera;
+Tube shape;
+float[] carX = {0,-200,200,200,-200};
+float[] carY = {0,-100,-100,100,100};
+float[] carZ = {0, 50, 100, -50, -100};
+float[] carSize = { 1, 1.25, 1.5, 0.75, 0.5};
+color[] carColour = {
+  color(220, 50, 50),
+  color( 50, 130,220),
+  color( 50, 200, 80),
+  color(220, 160, 30),
+  color(160, 50, 220)
+};
+
+void setup() {
+  size(1000, 1000, P3D);
+  camera = new PeasyCam(this, 600);
+
+  Path path = new Linear(new PVector(0, 0, -5), new PVector(0, 0, 5), 1);
+  Oval hexagon = new Oval(10, 50);
+  shape = new Tube(path, hexagon);
+  shape.fill(30);
+  shape.stroke(30);
+}
+
+void draw() {
+  background(70);
+  lights();
+
+  for (int i = 0; i < 5; i++) { 
+    drawCar(carX[i], carY[i], carZ[i], carSize[i], carColour[i]);
+  }
+}
+
+void drawCar(float xLoc, float yLoc, float zLoc, float size, color Colour) {
+  pushMatrix();
+  translate(xLoc, yLoc, zLoc);
+  scale(size);
+
+  //body
+  fill(Colour);
+  noStroke();
+  box(100, 20, 50);
+
+  //hood
+  fill(Colour);
+  pushMatrix();
+  translate(0, -17.5, 0);
+  box(55, 15, 50);
+  popMatrix();
+  
+  //Screen
+  fill(0);
+  pushMatrix();
+  translate(27.5, -17.5, 0);
+  box(1, 10, 40);
+  popMatrix();
+
+  //headlight
+  fill(255, 255, 180);
+  pushMatrix();
+  translate(47.6, -3, 15);
+  box(5);
+  translate(0, 0, -30);
+  box(5);
+  popMatrix();
+
+  shape.fill(30);
+  shape.stroke(30);
+  
+  //tires
+  pushMatrix();
+  translate(25, 10, 25);
+  shape.draw(g);
+  translate(-50, 0, 0);
+  shape.draw(g);
+  translate(0, 0, -50);
+  shape.draw(g);
+  translate(50, 0, 0);
+  shape.draw(g);
+  popMatrix();
+
+  popMatrix();
+}
